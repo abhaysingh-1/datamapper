@@ -27,7 +27,6 @@ public class DataMapperUtils {
 	private static final Logger LOGGER = LoggerFactory.getLogger(DataMapperUtils.class);
 
 	public static Sheet getExcelSheet() {
-		LOGGER.info("DataMapperUtils.getExcelSheet() :: method  started ");
 
 		FileInputStream file;
 		Workbook workBook;
@@ -43,7 +42,6 @@ public class DataMapperUtils {
 		} catch (IOException e) {
 			LOGGER.error("ErrorMsg = {}, Exception ={}", e.getMessage(), e);
 		}
-		LOGGER.info("DataMapperUtils.getExcelSheet() :: method  ended ");
 		return sheet;
 	}
 
