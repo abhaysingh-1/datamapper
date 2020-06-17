@@ -6,6 +6,11 @@ public class SourceMapper {
 	private String sourceType;
 	private List<SourceField> sourceFields;
 	
+	public SourceMapper(String sourceType, List<SourceField> sourceFields) {
+		super();
+		this.sourceType = sourceType;
+		this.sourceFields = sourceFields;
+	}
 	public String getSourceType() {
 		return sourceType;
 	}

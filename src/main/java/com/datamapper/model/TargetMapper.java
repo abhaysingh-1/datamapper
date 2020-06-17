@@ -6,6 +6,11 @@ public class TargetMapper {
 	private String targetType;
 	private List<TargetField> targetFields;
 	
+	public TargetMapper(String targetType, List<TargetField> targetFields) {
+		super();
+		this.targetType = targetType;
+		this.targetFields = targetFields;
+	}
 	public String getTargetType() {
 		return targetType;
 	}

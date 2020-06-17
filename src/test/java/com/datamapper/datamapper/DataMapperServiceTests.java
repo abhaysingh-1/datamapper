@@ -1,38 +1,38 @@
 package com.datamapper.datamapper;
 
-import static com.datamapper.constants.AppConstants.ONE_TO_ONE_VALUE;
-import static com.datamapper.constants.AppConstants.USES_LOGIC_VALUE;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.jupiter.api.Test;
 
-import com.datamapper.constants.AppConstants;
-import com.datamapper.service.DataMapperService;
-import com.datamapper.utils.DataMapperUtils;
+import com.datamapper.services.DataMapperService;
+import com.datamapper.services.ExcelReaderService;
+import com.datamapper.services.ExcelValidatorService;
 
 class DataMapperServiceTests {
 
 	private DataMapperService dataMapperService = new DataMapperService();
+	private ExcelValidatorService excelValidatorService = new ExcelValidatorService();
+	ExcelReaderService excelSheetReaderService = new ExcelReaderService(); 
 
 	@Test
 	public void testIsValidExcel() {
-		assertTrue(DataMapperUtils.isValidExcel(DataMapperUtils.getExcelSheet()));
+		assertTrue(excelValidatorService.isValidExcel(excelSheetReaderService.getExcelSheet()));
 	}
 
 	@Test
 	public void testuseCases_hardCodedValue() {
-		assertEquals(AppConstants.HARD_CODED_VALUE, dataMapperService.useCases("priceProvider"));
+		assertEquals("hardCoded value", dataMapperService.useCases("priceProvider"));
 	}
 
 	@Test
 	public void testuseCases_oneToOneValue() {
-		assertEquals(ONE_TO_ONE_VALUE, dataMapperService.useCases("investment"));
+		assertEquals("one to one mapping", dataMapperService.useCases("investment"));
 	}
 
 	@Test
 	public void testuseCases_UsesLogicValue() {
-		assertEquals(USES_LOGIC_VALUE, dataMapperService.useCases("priceDenomination"));
+		assertEquals("uses logic", dataMapperService.useCases("priceDenomination"));
 	}
 
 	@Test
