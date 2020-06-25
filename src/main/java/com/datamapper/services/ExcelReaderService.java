@@ -1,8 +1,5 @@
 package com.datamapper.services;
 
-import static com.datamapper.constants.AppConstants.EXCEL_PATH;
-import static com.datamapper.constants.AppConstants.SHEET_NAME;
-
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -17,14 +14,14 @@ import org.slf4j.LoggerFactory;
 public class ExcelReaderService {
 	private static final Logger LOGGER = LoggerFactory.getLogger(ExcelReaderService.class);
 
-	public Sheet getExcelSheet() {
+	public Sheet getExcelSheet(String filePath, String sheetName) {
 		FileInputStream file;
 		Workbook workBook;
 		Sheet sheet = null;
 		try {
-			file = new FileInputStream(EXCEL_PATH);
+			file = new FileInputStream(filePath);
 			workBook = WorkbookFactory.create(file);
-			sheet = workBook.getSheet(SHEET_NAME);
+			sheet = workBook.getSheet(sheetName);
 		} catch (FileNotFoundException e) {
 			LOGGER.error("ErrorMsg = {}, Exception ={}", e.getMessage(), e);
 		} catch (EncryptedDocumentException e) {

@@ -4,6 +4,17 @@ public class SourceField {
 	private String fieldName;
 	private int rowNumber;
 	
+	public SourceField(String fieldName, int rowNumber) {
+		super();
+		this.fieldName = fieldName;
+		this.rowNumber = rowNumber;
+	}
+	
+	public SourceField() {
+		super();
+	}
+
+
 	public String getFieldName() {
 		return fieldName;
 	}

@@ -5,7 +5,19 @@ public class TargetField {
 	private int rowNumber;
 	private String value;
 	private boolean formula;
-		
+	
+	public TargetField(String fieldName, int rowNumber, String value, boolean formula) {
+		super();
+		this.fieldName = fieldName;
+		this.rowNumber = rowNumber;
+		this.value = value;
+		this.formula = formula;
+	}
+	
+	public TargetField() {
+		super();
+	}
+
 	public String getFieldName() {
 		return fieldName;
 	}
